@@ -136,7 +136,8 @@ function setDisplayMode(mode){
 	if (mode=="contrast"){
 		createCssRule("mode", "*", "color: rgb(0,0,0) !important;background: rgb(255,255,255) !important;");
 		createCssRule("mode", "input,button", "border: 2px solid rgb(0,0,0) !important;");
-		createCssRule("mode", "a", "color:rgb(69,130,240) !important;text-decoration: underline !important;");
+		createCssRule("mode", "a", "color:rgb(69,130,240) !important;font-weight: 700 !important;");
+		createCssRule("mode", "a:hover, a:focus", "border: 2px solid rgb(0,0,0) !important;padding:10px;background: rgb(255,255,255) !important;color:rgb(69,130,240) !important;font-weight: 700 !important;");
 	}
 }
 
