@@ -94,7 +94,7 @@ function createCssRule(parent, name, rules) {
 	var style = document.createElement('style');
 	style.setAttribute("id", "accessibility-ui-style-" + parent + "");
 	style.type = 'text/css';
-	document.getElementsByTagName('head')[0].prepend(style);
+	document.getElementsByTagName('head')[0].appendChild(style);
   }
 
   style.sheet.insertRule(name + "{" + rules + "}", 0);
@@ -116,7 +116,7 @@ function showControls(){
 //--############################################################# -- Startup CSS
 //--#############################################################
 
-createCssRule("startup", "#accessibility-modl", "width:100%;background:#f1f1f1;padding:20px;font-weight: 300;color: #414141;font-size: 17px;line-height: 1.37;font-smooth: always;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif;-webkit-font-smoothing: antialiased;");
+createCssRule("startup", "#accessibility-modl", "width:100%;position:fixed;left:0px;top:0px;max-height:100vh;overflow:scroll;background:#f1f1f1;padding:20px;border-bottom:2px solid #000000;font-weight: 300;color: #414141;font-size: 17px;line-height: 1.37;font-smooth: always;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif;-webkit-font-smoothing: antialiased;");
 
 //--#############################################################
 //--############################################################# -- Key Controls
