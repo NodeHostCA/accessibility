@@ -94,7 +94,7 @@ function createCssRule(parent, name, rules) {
 	var style = document.createElement('style');
 	style.setAttribute("id", "accessibility-ui-style-" + parent + "");
 	style.type = 'text/css';
-	document.getElementsByTagName('head')[0].appendChild(style);
+	document.getElementsByTagName('head')[0].prepend(style);
   }
 
   style.sheet.insertRule(name + "{" + rules + "}", 0);
@@ -108,6 +108,7 @@ function clearCss(parent){
 
 function showControls(){
 	setModl();
+	clearContent("accessibility-modl-content");
 	writeContent("accessibility-modl-content","<strong>Accessibility Controls</strong>");
 }
 
@@ -115,7 +116,7 @@ function showControls(){
 //--############################################################# -- Startup CSS
 //--#############################################################
 
-createCssRule("startup", "#accessibility-modl", "background:#f1f1f1;padding:20px;font-weight: 300;color: #414141;font-size: 17px;line-height: 1.37;font-smooth: always;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif;-webkit-font-smoothing: antialiased;");
+createCssRule("startup", "#accessibility-modl", "width:100%;background:#f1f1f1;padding:20px;font-weight: 300;color: #414141;font-size: 17px;line-height: 1.37;font-smooth: always;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif;-webkit-font-smoothing: antialiased;");
 
 //--#############################################################
 //--############################################################# -- Key Controls
@@ -127,7 +128,7 @@ document.addEventListener("keypress", function(event) {
 	
 	if (exclude.indexOf(source.tagName.toLowerCase()) === -1) {
 		if (event.keyCode == 27) {
-		  showControls();
+			showControls();
 		}
 		if (event.keyCode == 192) {
 			showControls();
