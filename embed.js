@@ -117,9 +117,9 @@ function showControls(){
 		clearContent("accessibility-modl-content");
 		writeContent("accessibility-modl-content","<strong>Accessibility Controls</strong>");
 		
-		writeContent("accessibility-modl-content","<a href=\"javscript:setDisplayMode('');\">None</a>");
-		writeContent("accessibility-modl-content","<a href=\"javscript:setDisplayMode('invert');\">Invert</a>");
-		writeContent("accessibility-modl-content","<a href=\"javscript:setDisplayMode('contrast');\">Contrast</a>");
+		writeContent("accessibility-modl-content","<a href=\"javascript:setDisplayMode('');\">None</a>");
+		writeContent("accessibility-modl-content","<a href=\"javascript:setDisplayMode('invert');\">Invert</a>");
+		writeContent("accessibility-modl-content","<a href=\"javascript:setDisplayMode('contrast');\">Contrast</a>");
 	}else{
 		clearModl();
 	}
