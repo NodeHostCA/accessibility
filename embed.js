@@ -59,7 +59,7 @@ function setModl(){
 		var style = document.createElement('div');
 		style.setAttribute("id", "accessibility-modl");
 		document.getElementsByTagName('body')[0].appendChild(style);
-		document.getElementById("accessibility-modl").innerHTML="<div id='accessibility-modl-content'></div><div id='accessibility-modl-close' onclick='javascript:clearModl();'>Close</div>";
+		document.getElementById("accessibility-modl").innerHTML="<div id='accessibility-modl-content'></div><a id='accessibility-modl-close' href='javascript:clearModl();'>Close</a>";
 	}
 }
 
@@ -106,13 +106,36 @@ function clearCss(parent){
   }
 }
 
+
+//--#############################################################
+//--############################################################# -- Menus and Controls
+//--#############################################################
+
 function showControls(){
 	if (!document.getElementById("accessibility-modl")){
 		setModl();
 		clearContent("accessibility-modl-content");
 		writeContent("accessibility-modl-content","<strong>Accessibility Controls</strong>");
+		
+		writeContent("accessibility-modl-content","<a href=\"javscript:setDisplayMode('');\">None</a>");
+		writeContent("accessibility-modl-content","<a href=\"javscript:setDisplayMode('invert');\">Invert</a>");
+		writeContent("accessibility-modl-content","<a href=\"javscript:setDisplayMode('contrast');\">Contrast</a>");
 	}else{
 		clearModl();
+	}
+}
+
+function setDisplayMode(mode){
+	clearCss("mode");
+	
+	if (mode=="invert"){
+		createCssRule("mode", "*", "filter: invert(1); !important;");
+		createCssRule("mode", "img", "filter: invert(1); !important;"); //Reverse flip of images
+	}
+	
+	if (mode=="contrast"){
+		createCssRule("mode", "*", "color: #000000 !important;background: #ffffff !important;");
+		createCssRule("mode", "input,button", "border: 2px solid #000000 !important;");
 	}
 }
 
@@ -122,6 +145,7 @@ function showControls(){
 
 createCssRule("startup", "#accessibility-modl", "width:100%;position:fixed;left:0px;top:0px;max-height:100vh;overflow:scroll;background:#f1f1f1;padding:20px;border-bottom:2px solid #000000;font-weight: 400;color: #414141;font-size: 24px;line-height: 1.37;font-smooth: always;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif;-webkit-font-smoothing: antialiased;");
 createCssRule("startup", "#accessibility-modl-close", "display:inline-block;border:2px solid #000000;font-weight: 600;color: #000000;padding:10px;margin:10px;background:#ffffff;");
+createCssRule("startup", "a", "display:inline-block;border:2px solid #000000;font-weight: 400;color: #000000;padding:10px;margin:5px;background:#ffffff;");
 
 //--#############################################################
 //--############################################################# -- Key Controls
