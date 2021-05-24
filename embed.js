@@ -94,7 +94,7 @@ function createCssRule(parent, name, rules) {
 	var style = document.createElement('style');
 	style.setAttribute("id", "accessibility-ui-style-" + parent + "");
 	style.type = 'text/css';
-	document.getElementsByTagName('head')[0].appendChild(style);
+	document.getElementsByTagName('body')[0].appendChild(style);
   }
 
   style.sheet.insertRule(name + "{" + rules + "}", 0);
