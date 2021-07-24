@@ -129,8 +129,7 @@ function setDisplayMode(mode){
 	clearCss("mode");
 	
 	if (mode=="invert"){
-		createCssRule("mode", "*:not(#accessibility-modl)", "filter: invert(1); !important;");
-		createCssRule("mode", "*", "background:rgb(255,255,255) !important;color:rgb(0,0,0) !important;");
+		createCssRule("mode", "*:not(#accessibility-modl)", "filter: invert(1); !important;background:rgb(255,255,255) !important;color:rgb(0,0,0) !important;");
 		createCssRule("mode", "img:not(#accessibility-modl)", "filter: invert(1); !important;"); //Reverse flip of images
 	}
 	
