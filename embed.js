@@ -151,8 +151,10 @@ function setDisplayMode(mode){
 
 createCssRule("startup", "#accessibility-modl", "z-index: 9000000;position:fixed;left:0px;top:0px;max-width: 645px;width: calc(100% - 20px);border-radius: 9px;border: 2px solid rgb(0,0,0);margin: 10px;max-height:calc(100vh - 20px);overflow:scroll;background:rgb(255,255,255);padding:10px;font-weight: 400;color: #414141;font-size: 24px;line-height: 1.37;font-smooth: always;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif;-webkit-font-smoothing: antialiased;");
 createCssRule("startup", "#accessibility-modl-close", "display:inline-block;font-weight: 600;color:rgb(69,130,240);padding:10px;margin:10px;background:#ffffff;");
-createCssRule("startup", "#accessibility-modl a", "display:inline-block;font-weight: 400;color:rgb(69,130,240);background:rgb(242,242,242);border-radius: 9px;padding: 5px;padding-left: 15px;padding-right: 15px;margin:5px;background:#ffffff;");
-createCssRule("startup", "#accessibility-modl strong", "display:inline-block;font-weight: 800;");
+createCssRule("startup", "#accessibility-modl-close:hover", "background:rgb(242,242,242);");
+createCssRule("startup", "#accessibility-modl a", "display:inline-block;font-weight: 400;color:rgb(69,130,240);border-radius: 9px;padding: 5px;padding-left: 15px;padding-right: 15px;margin:5px;background:#ffffff;");
+createCssRule("startup", "#accessibility-modl a:hover", "background:rgb(242,242,242);");
+createCssRule("startup", "#accessibility-modl strong", "display:block;font-weight: 800;");
 
 //--#############################################################
 //--############################################################# -- Key Controls
