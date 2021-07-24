@@ -129,16 +129,16 @@ function setDisplayMode(mode){
 	clearCss("mode");
 	
 	if (mode=="invert"){
-		createCssRule("mode", "body", "filter: invert(1); !important;");
+		createCssRule("mode", "*:not(#accessibility-modl):empty", "filter: invert(1); !important;");
 		createCssRule("mode", "body", "background:rgb(255,255,255) !important;color:rgb(0,0,0) !important;");
-		createCssRule("mode", "img", "filter: invert(1); !important;"); //Reverse flip of images
+		createCssRule("mode", "img:not(#accessibility-modl)", "filter: invert(1); !important;"); //Reverse flip of images
 	}
 	
 	if (mode=="contrast"){
-		createCssRule("mode", "*", "color: rgb(0,0,0) !important;background: rgb(255,255,255) !important;text-shadow: 0px 0x 0px rgba(0, 0, 0, 0) !important;");
-		createCssRule("mode", "input,button", "border: 2px solid rgb(0,0,0) !important;");
-		createCssRule("mode", "a", "color:rgb(69,130,240) !important;font-weight: 700 !important;text-decoration: none;overflow:hidden;");
-		createCssRule("mode", "a:empty:hover, a:empty:focus", "border: 2px solid rgb(0,0,0) !important;padding:10px;background: rgb(255,255,255) !important;color:rgb(0,0,0) !important;font-weight: 700 !important;text-decoration: none;outline:none !important;outline-width: 0 !important;box-shadow: none;-moz-box-shadow: none;-webkit-box-shadow: none;");
+		createCssRule("mode", "*:not(#accessibility-modl)", "color: rgb(0,0,0) !important;background: rgb(255,255,255) !important;text-shadow: 0px 0x 0px rgba(0, 0, 0, 0) !important;");
+		createCssRule("mode", "input:not(#accessibility-modl),button:not(#accessibility-modl)", "border: 2px solid rgb(0,0,0) !important;");
+		createCssRule("mode", "a:not(#accessibility-modl)", "color:rgb(69,130,240) !important;font-weight: 700 !important;text-decoration: none;overflow:hidden;");
+		createCssRule("mode", "a:empty:hover:not(#accessibility-modl), a:empty:focus:not(#accessibility-modl)", "border: 2px solid rgb(0,0,0) !important;padding:10px;background: rgb(255,255,255) !important;color:rgb(0,0,0) !important;font-weight: 700 !important;text-decoration: none;outline:none !important;outline-width: 0 !important;box-shadow: none;-moz-box-shadow: none;-webkit-box-shadow: none;");
 		
 		createCssRule("mode", "input,textarea,button", "border: 2px solid rgb(0,0,0) !important;color:rgb(69,130,240) !important;font-weight: 400 !important;text-decoration: none;overflow:hidden;");
 		createCssRule("mode", "input:hover,input:focus,textarea:hover,textarea:focus,button:hover,button:focus", "border: 4px solid rgb(0,0,0) !important;padding:10px;background: rgb(255,255,255) !important;color:rgb(0,0,0) !important;font-weight: 400 !important;text-decoration: none;outline:none !important;outline-width: 0 !important;box-shadow: none;-moz-box-shadow: none;-webkit-box-shadow: none;");
