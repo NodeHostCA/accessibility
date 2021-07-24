@@ -129,12 +129,13 @@ function setDisplayMode(mode){
 	clearCss("mode");
 	
 	if (mode=="invert"){
-		createCssRule("mode", "*", "filter: invert(1); !important;");
+		createCssRule("mode", "body", "filter: invert(1); !important;");
+		createCssRule("mode", "body", "background:rgb(255,255,255) !important;color:rgb(0,0,0) !important;");
 		createCssRule("mode", "img", "filter: invert(1); !important;"); //Reverse flip of images
 	}
 	
 	if (mode=="contrast"){
-		createCssRule("mode", "*", "color: rgb(0,0,0) !important;background: rgb(255,255,255) !important;");
+		createCssRule("mode", "*", "color: rgb(0,0,0) !important;background: rgb(255,255,255) !important;text-shadow: 0px 0x 0px rgba(0, 0, 0, 0) !important;");
 		createCssRule("mode", "input,button", "border: 2px solid rgb(0,0,0) !important;");
 		createCssRule("mode", "a", "color:rgb(69,130,240) !important;font-weight: 700 !important;text-decoration: none;overflow:hidden;");
 		createCssRule("mode", "a:hover, a:focus", "border: 4px solid rgb(0,0,0) !important;padding:10px;background: rgb(255,255,255) !important;color:rgb(0,0,0) !important;font-weight: 700 !important;text-decoration: none;outline:none !important;outline-width: 0 !important;box-shadow: none;-moz-box-shadow: none;-webkit-box-shadow: none;");
@@ -148,9 +149,10 @@ function setDisplayMode(mode){
 //--############################################################# -- Startup CSS
 //--#############################################################
 
-createCssRule("startup", "#accessibility-modl", "z-index: 9000000;width:100%;position:fixed;left:0px;top:0px;max-height:100vh;overflow:scroll;background:#f1f1f1;padding:20px;border-bottom:2px solid #000000;font-weight: 400;color: #414141;font-size: 24px;line-height: 1.37;font-smooth: always;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif;-webkit-font-smoothing: antialiased;");
-createCssRule("startup", "#accessibility-modl-close", "display:inline-block;border:2px solid #000000;font-weight: 600;color: #000000;padding:10px;margin:10px;background:#ffffff;");
-createCssRule("startup", "#accessibility-modl a", "display:inline-block;border:2px solid #000000;font-weight: 400;color: #000000;padding:10px;margin:5px;background:#ffffff;");
+createCssRule("startup", "#accessibility-modl", "z-index: 9000000;position:fixed;left:0px;top:0px;max-width: 645px;width: calc(100% - 20px);border-radius: 9px;border: 2px solid rgb(0,0,0);margin: 10px;max-height:calc(100vh - 20px);overflow:scroll;background:rgb(255,255,255);padding:10px;font-weight: 400;color: #414141;font-size: 24px;line-height: 1.37;font-smooth: always;font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen-Sans, Ubuntu, Cantarell, \"Helvetica Neue\", sans-serif;-webkit-font-smoothing: antialiased;");
+createCssRule("startup", "#accessibility-modl-close", "display:inline-block;font-weight: 600;color:rgb(69,130,240);padding:10px;margin:10px;background:#ffffff;");
+createCssRule("startup", "#accessibility-modl a", "display:inline-block;font-weight: 400;color:rgb(69,130,240);background:rgb(242,242,242);border-radius: 9px;padding: 5px;padding-left: 15px;padding-right: 15px;margin:5px;background:#ffffff;");
+createCssRule("startup", "#accessibility-modl strong", "display:inline-block;font-weight: 800;");
 
 //--#############################################################
 //--############################################################# -- Key Controls
